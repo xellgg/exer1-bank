@@ -1,8 +1,8 @@
 package exer1_bank;
 
 public class BankAccount {
-    public double balance;
-    public boolean isFrozen;
+    private double balance;
+    private boolean isFrozen;
 
     public BankAccount(double balance, boolean isFrozen) {
         this.balance = balance;
@@ -36,10 +36,11 @@ public void withdraw(double amount) {
     }
     if (amount > balance) {
         System.out.println("Insufficient balance.");
+        System.out.println("Current balance: " + String.format("%.2f", balance));
     } else {
         balance -= amount;
+        System.out.println("Current balance: " + String.format("%.2f", balance));
     }
-    System.out.println("Current balance: " + String.format("%.2f", balance));
 }
 
     public double getBalance() {
